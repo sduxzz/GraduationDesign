@@ -1,0 +1,5 @@
+  移动互联网崛起的现在，为顺应移动互联网的快速发展，移动开发领域经历了包括html5在内的多次尝试。然而事实证明，html5是进步而不是银弹，webapp当前的局限性使它不能取代native应用成为当前移动开发的主导。在这种环境下继SaaS（软件即服务：Software as a Service）、IaaS（基础设施即服务：Infrastructure as a Service）和PaaS（平台即服务：Platform as a Service）之后，BaaS（后端即服务：Backend as a Service）生态系统正从一个小众垂直领域迅速成为非常重要的行业环节。
+  本课题的主要内容旨在研究native的移动开发（以ios、android为例）中存在的主要问题，学习后端即服务的产业现状和实现技术，从而设计和实现一个简单的移动应用后端服务框架。
+  技术上经过前期调研，服务端技术计划使用ruby on rails+mongodb,安卓和ios平台上分别根据平台自身特点开发java+androidSDK和Objective-c+CocoaSdk的本地开发工具包。通信协议会是json、xml、protobuf中的一种，将在进一步调研过程中确定。在设计和实现过程中，将参考现有开源框架如serviceFramework、DBOMG等。
+  我们希望最终的设计和实现达到这样的目的：使移动应用前端开发人员从后端服务的设计和实施中解放出来，使其避免面对java/php/asp/ruby等后端技术的漫长学习曲线，而专注于对用户行为的分析和前端用户体验的改善。
+  在软件开发分工日益明确、移动应用开发周期越来越短的现在，我们相信对于很大一部分移动开发人员尤其是小团队和个人开发者，通讯、统计和存储更应是一种功能而非一种技能或者技术。
