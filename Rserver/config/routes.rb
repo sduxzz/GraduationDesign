@@ -1,4 +1,6 @@
 Rserver::Application.routes.draw do
+  get "index_controller/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
