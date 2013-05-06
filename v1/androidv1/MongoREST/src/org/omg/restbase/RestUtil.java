@@ -10,6 +10,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
@@ -19,6 +20,8 @@ public final class RestUtil {
 	private static final String DEFAULT_LOCAL_ENCODE = "UTF-8";
 	private static final String DEFAULT_REMOTE_ENCODE = "UTF-8";
 	private static final int HTTP_200 = 200;
+	private static final int HTTP_201 = 201;
+
 	private static DefaultHttpClient httpClient = new DefaultHttpClient();
 	static {
 		// …Ë÷√timeout
@@ -40,7 +43,7 @@ public final class RestUtil {
 	 * @return
 	 */
 	public static String sendRequest(HttpRequestMethod methodEnum, String url,
-			Map<String, String> paramsMap) {
+			Map<String, String> paramsMap,String stringEntity) {
 		String result = null;
 		HttpUriRequest req = null;
 
@@ -67,12 +70,19 @@ public final class RestUtil {
 					url += param;
 				}
 			}
+			
 			if(req==null){
 				req = methodEnum.createRequest(url);
 			}
+			
+			if(stringEntity!=null){
+				((HttpEntityEnclosingRequest) req)
+				.setEntity(new StringEntity(stringEntity));
+			}
+			
 			HttpResponse httpResp = httpClient.execute(req);
 
-			if (httpResp.getStatusLine().getStatusCode() == HTTP_200) {
+			if (httpResp.getStatusLine().getStatusCode() == HTTP_200||httpResp.getStatusLine().getStatusCode() == HTTP_201) {
 				result = EntityUtils.toString(httpResp.getEntity(),
 						DEFAULT_LOCAL_ENCODE);
 			} else {

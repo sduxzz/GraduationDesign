@@ -11,7 +11,7 @@ public class T_connect {
 		HashMap<String,String> map=new HashMap<String,String>();
 		map.put("save", "{\"name\",\"sww\"}");
 		String res=RestUtil.sendRequest(HttpRequestMethod.HttpGet
-				, "http://0.0.0.0:3001/test/user/", map);
+				, "http://0.0.0.0:3001/test/user/", null,null);
 		System.out.println(res);
 	}
 }
