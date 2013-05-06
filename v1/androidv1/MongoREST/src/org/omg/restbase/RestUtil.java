@@ -65,8 +65,10 @@ public final class RestUtil {
 						i++;
 					}
 					url += param;
-					req = methodEnum.createRequest(url);
 				}
+			}
+			if(req==null){
+				req = methodEnum.createRequest(url);
 			}
 			HttpResponse httpResp = httpClient.execute(req);
 
