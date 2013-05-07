@@ -87,6 +87,7 @@ public final class RestUtil {
 						DEFAULT_LOCAL_ENCODE);
 			} else {
 			}
+			//System.out.println(httpResp.getStatusLine());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

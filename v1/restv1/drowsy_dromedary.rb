@@ -46,7 +46,7 @@ class DrowsyDromedary < Grape::API
 
     def create_db(db)
       @dbs ||= {}
-      @dbs[db] = connect.db(db, :strict => true)
+      @dbs[db] = connect.db(db, :strict => false)
       @dbs[db].collection_names # calling .collection_names seems to create the database
       @dbs[db]
     end
@@ -56,7 +56,7 @@ class DrowsyDromedary < Grape::API
       return @dbs[db] if @dbs[db]
       c = connect
       if c.database_names.include?(db.to_s)
-        c.db(db, :strict => true)
+        c.db(db, :strict => false)
       else
         return false
       end

@@ -4,7 +4,7 @@ import org.omg.model.OmgModel;
 
 public class T_save {
 
-	static class user extends OmgModel{
+	static class ani extends OmgModel{
 		private static final long serialVersionUID = -6778289744214333731L;
 		
 		private String name;
@@ -19,8 +19,8 @@ public class T_save {
 	}
 	
 	public static void main(String[] args){
-		user u=new user();
-		u.setName("sss");
+		ani u=new ani();
+		u.setName("dog");
 		u.save();
 	}
 }
