@@ -101,7 +101,20 @@ class DrowsyDromedary < Grape::API
         nil
       end
     end
-
+    
+	def extract_opt_from_params
+      if params[:opt]
+      	res={}
+        opt = JSON.parse(params[:opt])
+        opt.each do |k,v|
+           res[k.to_sym]=v
+        end 
+        res
+      else
+        nil
+      end
+    end
+    
     def extract_sort_from_params
       if params[:sort]
         sort = nil
@@ -184,8 +197,11 @@ class DrowsyDromedary < Grape::API
       desc "Retrieve all items in the collection"
       get do
         selector = extract_selector_from_params
-        sort = extract_sort_from_params
-        @db.collection(params[:collection]).find(selector, :sort => sort).to_a
+        #sort = extract_sort_from_params
+        opt=extract_opt_from_params
+        puts selector
+        puts opt
+        @db.collection(params[:collection]).find(selector,opt).to_a
       end
 
       desc "Add a new item to the collection"

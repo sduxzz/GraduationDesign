@@ -8,7 +8,7 @@ public class T_save {
 		private static final long serialVersionUID = -6778289744214333731L;
 		
 		private String name;
-
+		private int age;
 		public String getName() {
 			return name;
 		}
@@ -16,11 +16,20 @@ public class T_save {
 		public void setName(String name) {
 			this.name = name;
 		}
+
+		public int getAge() {
+			return age;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
 	}
 	
 	public static void main(String[] args){
 		ani u=new ani();
-		u.setName("dog");
+		u.setName("monkey");
+		u.setAge(15);
 		u.save();
 	}
 }

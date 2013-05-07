@@ -10,6 +10,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -57,20 +58,9 @@ public final class RestUtil {
 									keyValueToValuePairList(paramsMap),
 									DEFAULT_REMOTE_ENCODE));
 				}else{
-					StringBuffer param = new StringBuffer();
-					int i = 0;
-					for (String key : paramsMap.keySet()) {
-						if (i == 0)
-							param.append("?");
-						else
-							param.append("&");
-						param.append(key).append("=").append(paramsMap.get(key));
-						i++;
-					}
-					url += param;
+					url+="?"+URLEncodedUtils.format(keyValueToValuePairList(paramsMap), DEFAULT_REMOTE_ENCODE);
 				}
 			}
-			
 			if(req==null){
 				req = methodEnum.createRequest(url);
 			}
@@ -79,7 +69,7 @@ public final class RestUtil {
 				((HttpEntityEnclosingRequest) req)
 				.setEntity(new StringEntity(stringEntity));
 			}
-			
+			System.out.println(req);
 			HttpResponse httpResp = httpClient.execute(req);
 
 			if (httpResp.getStatusLine().getStatusCode() == HTTP_200||httpResp.getStatusLine().getStatusCode() == HTTP_201) {
