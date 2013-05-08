@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class OmgOption {
 	public static final String ASC="ASC";
 	public static final String DESC="DESC";
-	
+
 	private String qString = "{";
 	private ArrayList<String> sortArr;
+	private String[] fieldArr;
 	private static final String sortMark="__sort__:";
-	
+	private static final String fieldMark="__field__:";
+
 	public String getOptions() {
 		makeup();
 		return qString + "}";
@@ -47,6 +49,15 @@ public class OmgOption {
 		return this;
 	}
 	
+	public OmgOption field(String[] fields){
+		if(fieldArr==null){
+			fieldArr=fields;
+			addOption(fieldMark);
+		}
+		return this;
+	}
+	
+	
 	private String toJsonString(Object o){
 		return "\""+o+"\"";
 	}
@@ -59,6 +70,14 @@ public class OmgOption {
 			}
 			sortString+=sortArr.get(sortArr.size()-1)+"]";
 			qString=qString.replace(sortMark, sortString);
+		}
+		if(fieldArr!=null){
+			String fieldString=toJsonString("fields")+":[";
+			for(int i=0;i<fieldArr.length-1;i++){
+				fieldString+=toJsonString(fieldArr[i])+",";
+			}
+			fieldString+=toJsonString(fieldArr[fieldArr.length-1])+"]";
+			qString=qString.replace(fieldMark, fieldString);
 		}
 	}
 
