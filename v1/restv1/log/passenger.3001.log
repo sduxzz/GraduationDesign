@@ -4323,3 +4323,5 @@
 {:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>1, :fields=>["age"]}
 {"name"=>"monkey", "age"=>{"$lte"=>115}}
 {:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>1, :fields=>["name", "age"]}
+{"name"=>"monkey", "age"=>{"$lte"=>115}}
+{:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>1, :fields=>["name", "age"]}

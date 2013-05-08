@@ -39,7 +39,7 @@ public class T_load {
 		OmgOption opt=new OmgOption();
 		opt.limit(8).sort("age", false).sort("name",false).skip(1).field(new String[]{"name","age"});
 		System.out.println(opt.toString());	
-		ArrayList<ani> arr=OmgDAT.load(ani.class, s.toString(),opt.toString());
+		ArrayList<ani> arr=OmgDAT.load(ani.class, s, opt);
 		for(ani temp:arr){
 			System.out.println(temp.getName()+":"+temp.getAge());
 		}

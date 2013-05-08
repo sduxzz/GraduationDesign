@@ -1,14 +1,16 @@
 package test;
 
+import org.omg.OmgDAT;
 import org.omg.model.OmgModel;
 
 public class T_save {
 
-	static class ani extends OmgModel{
+	static class Student extends OmgModel{
 		private static final long serialVersionUID = -6778289744214333731L;
 		
 		private String name;
 		private int age;
+		private int grade;
 		public String getName() {
 			return name;
 		}
@@ -24,12 +26,24 @@ public class T_save {
 		public void setAge(int age) {
 			this.age = age;
 		}
+
+		public int getGrade() {
+			return grade;
+		}
+
+		public void setGrade(int grade) {
+			this.grade = grade;
+		}
 	}
 	
 	public static void main(String[] args){
-		ani u=new ani();
-		u.setName("monkey");
-		u.setAge(15);
-		u.save();
+		for(int i=0;i<20;i++){
+			Student s=new Student();
+			s.age=(int) (20*Math.random());
+			s.grade=(int) (10*Math.random());
+			s.name="student"+(i+1);
+			s.save();
+		}
+		System.out.println(OmgDAT.load(Student.class,null, null));
 	}
 }

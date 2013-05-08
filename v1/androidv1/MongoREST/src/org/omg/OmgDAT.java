@@ -24,15 +24,19 @@ public class OmgDAT {
 	}
 
 	public static <T extends OmgModel> ArrayList<T> load(Class<T> c,
-			String selector, String sort) {
+			OmgSelector selector, OmgOption sort) {
+		return load(c, selector.getSelector(), sort.getOptions());
+	}
+	
+	private static <T extends OmgModel> ArrayList<T> load(Class<T> c,
+			String selector, String opt) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		if(selector!=null){
 			map.put("selector", selector);
 		}
-		if(sort!=null){
-			map.put("opt", sort);
+		if(opt!=null){
+			map.put("opt", opt);
 		}
-		//map.put("limit", "1");
 		String json=RestUtil.sendRequest(HttpRequestMethod.HttpGet,
 				Config.getMongoRestAddr() + c.getSimpleName(), map, null);
 		
