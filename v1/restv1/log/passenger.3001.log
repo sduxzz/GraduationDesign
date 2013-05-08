@@ -4201,3 +4201,11 @@
 {:limit=>3, :sort=>[["age", "DESC"], ["name", "ASC"]]}
 {"age"=>{"$lte"=>115}}
 {:limit=>3, :sort=>[["age", "DESC"], ["name", "DESC"]]}
+{"age"=>{"$lte"=>115}}
+{:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]]}
+{"age"=>{"$lte"=>115}}
+{:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>2}
+{"name"=>"monkey", "age"=>{"$lte"=>115}}
+{:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>2}
+{"name"=>"monkey", "age"=>{"$lte"=>115}}
+{:limit=>8, :sort=>[["age", "DESC"], ["name", "DESC"]], :skip=>1}

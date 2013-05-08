@@ -34,14 +34,12 @@ public class T_load {
 	
 	public static void main(String[] args){
 		OmgSelector s=new OmgSelector();
-		//s.addField(new OmgField("name").is("monkey"));
+		s.addField(new OmgField("name").is("monkey"));
 		s.addField(new OmgField("age").lte(115));
-		System.out.println(s);
 		OmgOption opt=new OmgOption();
-		opt.limit(3).sort("age", false).sort("name",false);
-		System.out.println(opt);
+		opt.limit(8).sort("age", false).sort("name",false).skip(1);
+			
 		ArrayList<ani> arr=OmgDAT.load(ani.class, s.toString(),opt.toString());
-		//OmgDAT.load(ani.class, s.toString(),"{\"sort\":[[\"age\",\"DESC\"]],\"limit\":2}");
 		for(ani temp:arr){
 			System.out.println(temp.getName()+":"+temp.getAge());
 		}

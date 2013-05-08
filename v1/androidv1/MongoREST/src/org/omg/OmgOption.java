@@ -27,8 +27,11 @@ public class OmgOption {
 			qString += "," + opt;
 		}
 	}
-
 	
+	public OmgOption skip(int num){
+		addOption(toJsonString("skip")+":"+num);
+		return this;
+	}
 	
 	public OmgOption limit(int num){
 		addOption(toJsonString("limit")+":"+num);
