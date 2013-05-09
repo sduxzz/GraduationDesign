@@ -63,4 +63,14 @@ public class OmgDAT {
 		RestUtil.sendRequest(HttpRequestMethod.HttpPut,
 				Config.getMongoRestAddr() + c.getSimpleName(), map, null);
 	}
+	
+	public static void delete(Class<? extends OmgModel> c,
+			OmgSelector selector) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		if (selector != null) {
+			map.put("selector", selector.getSelector());
+		}
+		RestUtil.sendRequest(HttpRequestMethod.HttpDelete,
+				Config.getMongoRestAddr() + c.getSimpleName(), map, null);
+	}
 }

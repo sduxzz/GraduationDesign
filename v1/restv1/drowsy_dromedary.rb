@@ -284,12 +284,12 @@ class DrowsyDromedary < Grape::API
       end
 
       desc "Delete the item with id :id from the collection"
-      delete '/:id' do
-        id = BSON::ObjectId(params[:id])
-        if @db.collection(params[:collection]).remove({'_id' => id})
+      delete  do
+       	selector=extract_selector_from_params
+        if @db.collection(params[:collection]).remove(selector,{})
           {} # FIXME: we probably want to just return nil (i.e. null) here, but this is not parsable by JSON.parse()
         else
-          error!("Item #{params[:id].inspect} could not be deleted from #{params[:collection].inspect}!", 500)
+          error!("error on remove", 500)
         end
       end
     end
