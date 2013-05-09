@@ -101,7 +101,14 @@ class DrowsyDromedary < Grape::API
         nil
       end
     end
-    
+    def extract_document_from_params
+      if params[:document]
+        selector = JSON.parse(params[:document])
+        selector
+      else
+        nil
+      end
+    end
 	def extract_opt_from_params
       if params[:opt]
       	res={}
@@ -203,7 +210,16 @@ class DrowsyDromedary < Grape::API
         puts opt
         @db.collection(params[:collection]).find(selector,opt).to_a
       end
-
+      desc "update"
+      put do
+      	selector=extract_selector_from_params
+      	opt=extract_opt_from_params
+      	document=extract_document_from_params
+      	puts selector
+      	puts opt
+      	puts document
+      	@db.collection(params[:collection]).update(selector,{"$set" => document},opt);
+      end
       desc "Add a new item to the collection"
       post do
         data = extract_data_from_params
@@ -226,10 +242,10 @@ class DrowsyDromedary < Grape::API
         item
       end
 
-      desc "Replace or create the item with id :id in the collection"
-      put '/:id' do
-        id = BSON::ObjectId(params[:id])
-        data = extract_data_from_params
+#      desc "Replace or create the item with id :id in the collection"
+#      put '/:id' do
+#        id = BSON::ObjectId(params[:id])
+#        data = extract_data_from_params
 
         # TODO: switch to find_and_modify for better performance?
         # item = @db.collection(params[:collection]).find_one(id)
@@ -238,13 +254,13 @@ class DrowsyDromedary < Grape::API
         #   error!("Item #{params[:id].inspect} doesn't exist in #{params[:collection].inspect}!", 404)
         # end
 
-        data['_id'] = id
+#        data['_id'] = id
 
-        @db.collection(params[:collection]).save(data)
+#        @db.collection(params[:collection]).save(data)
 
         # FIXME: save ourselves the extra query and just return `data`? (may need to stringify data['_id'] first though)
-        @db.collection(params[:collection]).find_one(id)
-      end
+#        @db.collection(params[:collection]).find_one(id)
+#      end
 
       desc "Replaces the given attributes in the item with id :id in the collection"
       patch '/:id' do

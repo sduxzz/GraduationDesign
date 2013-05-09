@@ -8,6 +8,11 @@ public class OmgField {
 		this.name=name;
 	}
 	
+	public OmgField(String name,Object value){
+		this(name);
+		is(value);
+	}
+	
 	public OmgField is(Object o){
 		qString+=split()+ toJsonString(name)+":"+(o instanceof String?toJsonString(o):o.toString());
 		return this;

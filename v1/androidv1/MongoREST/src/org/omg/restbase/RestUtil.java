@@ -23,14 +23,14 @@ public final class RestUtil {
 	private static final int HTTP_200 = 200;
 	private static final int HTTP_201 = 201;
 
-	private static DefaultHttpClient httpClient = new DefaultHttpClient();
-	static {
-		// 设置timeout
-		httpClient.getParams().setParameter(HttpConnectionParams.SO_TIMEOUT,
-				Integer.valueOf(5000));
-		httpClient.getParams().setParameter(
-				HttpConnectionParams.CONNECTION_TIMEOUT, Integer.valueOf(3000));
-	}
+//	private static DefaultHttpClient httpClient = new DefaultHttpClient();
+//	static {
+//		// 设置timeout
+//		httpClient.getParams().setParameter(HttpConnectionParams.SO_TIMEOUT,
+//				Integer.valueOf(5000));
+//		httpClient.getParams().setParameter(
+//				HttpConnectionParams.CONNECTION_TIMEOUT, Integer.valueOf(3000));
+//	}
 
 	/**
 	 * 发送http请求
@@ -45,13 +45,18 @@ public final class RestUtil {
 	 */
 	public static String sendRequest(HttpRequestMethod methodEnum, String url,
 			Map<String, String> paramsMap,String stringEntity) {
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		httpClient.getParams().setParameter(HttpConnectionParams.SO_TIMEOUT,
+				Integer.valueOf(5000));
+		httpClient.getParams().setParameter(
+				HttpConnectionParams.CONNECTION_TIMEOUT, Integer.valueOf(3000));
 		String result = null;
 		HttpUriRequest req = null;
 
 		try {
 			if (paramsMap != null) {
 				if (methodEnum == HttpRequestMethod.HttpPost
-						|| methodEnum == HttpRequestMethod.HttpPut) {
+						) {
 					req = methodEnum.createRequest(url);
 					((HttpEntityEnclosingRequest) req)
 							.setEntity(new UrlEncodedFormEntity(
@@ -69,7 +74,7 @@ public final class RestUtil {
 				((HttpEntityEnclosingRequest) req)
 				.setEntity(new StringEntity(stringEntity));
 			}
-			System.out.println(req);
+			//System.out.println(req);
 			HttpResponse httpResp = httpClient.execute(req);
 
 			if (httpResp.getStatusLine().getStatusCode() == HTTP_200||httpResp.getStatusLine().getStatusCode() == HTTP_201) {

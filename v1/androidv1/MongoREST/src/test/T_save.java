@@ -1,11 +1,13 @@
 package test;
 
+import java.util.ArrayList;
+
 import org.omg.OmgDAT;
 import org.omg.model.OmgModel;
 
 public class T_save {
 
-	static class Student extends OmgModel{
+	public static class student extends OmgModel{
 		private static final long serialVersionUID = -6778289744214333731L;
 		
 		private String name;
@@ -34,16 +36,21 @@ public class T_save {
 		public void setGrade(int grade) {
 			this.grade = grade;
 		}
+		
+		@Override
+		public String toString() {
+			return name+":"+grade+":"+age;
+		}
 	}
 	
 	public static void main(String[] args){
-		for(int i=0;i<20;i++){
-			Student s=new Student();
-			s.age=(int) (20*Math.random());
-			s.grade=(int) (10*Math.random());
-			s.name="student"+(i+1);
-			s.save();
+		ArrayList<student> sArr=OmgDAT.load(student.class,null, null);
+		student st=sArr.get(0);
+		st.setAge(3);
+		st.save();
+		sArr=OmgDAT.load(student.class,null, null);
+		for(student s:sArr){
+			System.out.println(s.toString());
 		}
-		System.out.println(OmgDAT.load(Student.class,null, null));
 	}
 }

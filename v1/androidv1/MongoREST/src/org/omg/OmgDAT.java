@@ -24,22 +24,43 @@ public class OmgDAT {
 	}
 
 	public static <T extends OmgModel> ArrayList<T> load(Class<T> c,
-			OmgSelector selector, OmgOption sort) {
-		return load(c, selector.getSelector(), sort.getOptions());
+			OmgSelector selector, OmgOption opt) {
+		return load(c, selector == null ? "{}" : selector.getSelector(),
+				opt == null ? "{}" : opt.getOptions());
 	}
-	
+
 	private static <T extends OmgModel> ArrayList<T> load(Class<T> c,
 			String selector, String opt) {
 		HashMap<String, String> map = new HashMap<String, String>();
-		if(selector!=null){
+		if (selector != null) {
 			map.put("selector", selector);
 		}
-		if(opt!=null){
+		if (opt != null) {
 			map.put("opt", opt);
 		}
-		String json=RestUtil.sendRequest(HttpRequestMethod.HttpGet,
+		String json = RestUtil.sendRequest(HttpRequestMethod.HttpGet,
 				Config.getMongoRestAddr() + c.getSimpleName(), map, null);
-		
+
 		return (ArrayList<T>) DecodeTool.jsonToObjArr(json, c);
+	}
+
+	public static void update(Class<? extends OmgModel> c,
+			OmgSelector selector, OmgOption opt, OmgField... fArr) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		if (selector != null) {
+			map.put("selector", selector.getSelector());
+		}
+		if (opt != null) {
+			map.put("opt", opt.getOptions());
+		}
+		if (fArr != null) {
+			OmgSelector doc = new OmgSelector();
+			for (OmgField f : fArr) {
+				doc.addField(f);
+			}
+			map.put("document", doc.getSelector());
+		}
+		RestUtil.sendRequest(HttpRequestMethod.HttpPut,
+				Config.getMongoRestAddr() + c.getSimpleName(), map, null);
 	}
 }
