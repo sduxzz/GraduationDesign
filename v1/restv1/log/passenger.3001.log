@@ -4895,3 +4895,15 @@
 {"name"=>"student3"}
 {}
 {"age"=>1024, "grade"=>"六年级"}
+{"name"=>"student3"}
+{}
+{"age"=>2048, "grade"=>"六年级"}
+{"name"=>"student3"}
+{:multi=>true}
+{"age"=>250, "grade"=>"六年级"}
+{"name"=>"student31"}
+{:multi=>true}
+{"age"=>250, "grade"=>"六年级"}
+{"name"=>"student31"}
+{:multi=>true, :upsert=>true}
+{"age"=>250, "grade"=>"六年级"}

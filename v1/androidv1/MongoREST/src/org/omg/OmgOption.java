@@ -40,6 +40,16 @@ public class OmgOption {
 		return this;
 	}
 	
+	public OmgOption upsert(boolean updateOrInsert){
+		addOption(toJsonString("upsert")+":"+updateOrInsert);
+		return this;
+	}
+	
+	public OmgOption multi(boolean multi){
+		addOption(toJsonString("multi")+":"+multi);
+		return this;
+	}
+	
 	public OmgOption sort(String field,boolean asc){
 		if(sortArr==null){
 			sortArr=new ArrayList<String>();

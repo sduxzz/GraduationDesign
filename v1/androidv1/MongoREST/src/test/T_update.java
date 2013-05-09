@@ -9,7 +9,7 @@ public class T_update {
 
 	public static void main(String[] args){
 		OmgSelector selector=new OmgSelector();
-		selector.addField(new OmgField("name", "student3"));
-		OmgDAT.update(T_save.student.class, selector, new OmgOption(), new OmgField("age", 1024),new OmgField("grade","六年级"));
+		selector.addField(new OmgField("name", "student31"));
+		OmgDAT.update(T_save.student.class, selector, new OmgOption().multi(true).upsert(true), new OmgField("age", 250),new OmgField("grade","六年级"));
 	}
 }
