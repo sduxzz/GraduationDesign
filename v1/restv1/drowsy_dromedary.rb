@@ -201,7 +201,7 @@ class DrowsyDromedary < Grape::API
     # TODO: implement DELETE to drop collection
 
     resource '/:collection' do
-      desc "Retrieve all items in the collection"
+      desc "Retrieve given items in the collection"
       get do
         selector = extract_selector_from_params
         #sort = extract_sort_from_params
@@ -224,7 +224,6 @@ class DrowsyDromedary < Grape::API
       post do
         data = extract_data_from_params
         id = @db.collection(params[:collection]).insert(data)
-        # FIXME: save ourselves the extra query and just return `data`?
         @db.collection(params[:collection]).find_one(id)
       end
 
@@ -283,7 +282,7 @@ class DrowsyDromedary < Grape::API
         @db.collection(params[:collection]).find_one(id)
       end
 
-      desc "Delete the item with id :id from the collection"
+      desc "Delete the item from the collection"
       delete  do
        	selector=extract_selector_from_params
         if @db.collection(params[:collection]).remove(selector,{})
