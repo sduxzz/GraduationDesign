@@ -1,0 +1,146 @@
+[ 2013-05-11 17:02:35.8901 30661/b74be700 agents/HelperAgent/Main.cpp:554 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.30657/generation-0/request.socket
+[ 2013-05-11 17:02:35.9655 30667/b6b16980 agents/LoggingAgent/Main.cpp:272 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.30657/generation-0/logging.socket
+[ 2013-05-11 17:02:38.0624 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] 
+[ 2013-05-11 17:02:38.1819 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] *** Phusion Passenger: no passenger_native_support.so found for the current Ruby interpreter. Compiling one...
+[ 2013-05-11 17:02:38.1896 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] # mkdir -p /tmp/passenger-standalone.24059/locations.ini/libout/ruby/ruby-1.9.3-x86-linux
+[ 2013-05-11 17:02:38.1899 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] Not a valid directory. Trying a different one...
+[ 2013-05-11 17:02:38.1899 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] -------------------------------
+[ 2013-05-11 17:02:38.1899 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] # mkdir -p /home/juqiang/.passenger/native_support/4.0.2/ruby-1.9.3-x86-linux
+[ 2013-05-11 17:02:38.1902 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] # cd /home/juqiang/.passenger/native_support/4.0.2/ruby-1.9.3-x86-linux
+[ 2013-05-11 17:02:38.1903 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] # /home/juqiang/.rvm/wrappers/ruby-1.9.3-p392/ruby '/home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/ext/ruby/extconf.rb'
+[ 2013-05-11 17:02:38.3301 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] checking for alloca.h... yes
+[ 2013-05-11 17:02:38.3644 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] checking for ruby/io.h... yes
+[ 2013-05-11 17:02:38.3645 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] creating Makefile
+[ 2013-05-11 17:02:38.3733 30661/b74bbb40 Pool2/Spawner.h:159 ]: [App 30686 stderr] # make
+[ 2013-05-11 17:02:38.3771 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] compiling /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/ext/ruby/passenger_native_support.c
+[ 2013-05-11 17:02:38.5500 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30686 stdout] linking shared-object passenger_native_support.so
+[ 2013-05-11 17:02:38.7712 30661/b727db40 Pool2/Implementation.cpp:762 ]: Could not spawn process for group /home/juqiang/GraduationDesign/v1/restv1#default: An error occured while starting up the preloader.
+     in 'void Passenger::ApplicationPool2::SmartSpawner::handleErrorResponse(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:454)
+     in 'std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:557)
+     in 'void Passenger::ApplicationPool2::SmartSpawner::startPreloader()' (SmartSpawner.h:205)
+     in 'virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&)' (SmartSpawner.h:743)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (Implementation.cpp:695)
+
+[ 2013-05-11 17:02:38.7715 30661/b5affb40 agents/HelperAgent/RequestHandler.h:1888 ]: [Client 20] Cannot checkout session. An error occured while starting up the preloader.
+Error page:
+Could not find bson-1.6.2 in any of the sources (Bundler::GemNotFound)
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:92:in `block in materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `map!'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:114:in `specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:159:in `specs_for'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:148:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/environment.rb:18:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/runtime.rb:13:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler.rb:120:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/setup.rb:17:in `<top (required)>'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `rescue in require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:35:in `require'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/loader_shared_helpers.rb:212:in `run_load_path_setup_code'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:73:in `preload_app'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:127:in `<module:App>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:6:in `<module:PhusionPassenger>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:5:in `<main>'
+
+[ 2013-05-11 17:04:06.6948 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30897 stdout] 
+[ 2013-05-11 17:04:07.0591 30661/b727db40 Pool2/Implementation.cpp:762 ]: Could not spawn process for group /home/juqiang/GraduationDesign/v1/restv1#default: An error occured while starting up the preloader.
+     in 'void Passenger::ApplicationPool2::SmartSpawner::handleErrorResponse(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:454)
+     in 'std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:557)
+     in 'void Passenger::ApplicationPool2::SmartSpawner::startPreloader()' (SmartSpawner.h:205)
+     in 'virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&)' (SmartSpawner.h:743)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (Implementation.cpp:695)
+
+[ 2013-05-11 17:04:07.0595 30661/b5affb40 agents/HelperAgent/RequestHandler.h:1888 ]: [Client 20] Cannot checkout session. An error occured while starting up the preloader.
+Error page:
+Could not find bson-1.6.2 in any of the sources (Bundler::GemNotFound)
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:92:in `block in materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `map!'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:114:in `specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:159:in `specs_for'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:148:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/environment.rb:18:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/runtime.rb:13:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler.rb:120:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/setup.rb:17:in `<top (required)>'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `rescue in require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:35:in `require'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/loader_shared_helpers.rb:212:in `run_load_path_setup_code'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:73:in `preload_app'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:127:in `<module:App>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:6:in `<module:PhusionPassenger>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:5:in `<main>'
+
+[ 2013-05-11 17:04:08.4004 30661/b727db40 Pool2/Spawner.h:739 ]: [App 30928 stdout] 
+[ 2013-05-11 17:04:08.6230 30661/b727db40 Pool2/Implementation.cpp:762 ]: Could not spawn process for group /home/juqiang/GraduationDesign/v1/restv1#default: An error occured while starting up the preloader.
+     in 'void Passenger::ApplicationPool2::SmartSpawner::handleErrorResponse(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:454)
+     in 'std::string Passenger::ApplicationPool2::SmartSpawner::negotiatePreloaderStartup(Passenger::ApplicationPool2::SmartSpawner::StartupDetails&)' (SmartSpawner.h:557)
+     in 'void Passenger::ApplicationPool2::SmartSpawner::startPreloader()' (SmartSpawner.h:205)
+     in 'virtual Passenger::ApplicationPool2::ProcessPtr Passenger::ApplicationPool2::SmartSpawner::spawn(const Passenger::ApplicationPool2::Options&)' (SmartSpawner.h:743)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (Implementation.cpp:695)
+
+[ 2013-05-11 17:04:08.6233 30661/b5affb40 agents/HelperAgent/RequestHandler.h:1888 ]: [Client 20] Cannot checkout session. An error occured while starting up the preloader.
+Error page:
+Could not find bson-1.6.2 in any of the sources (Bundler::GemNotFound)
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:92:in `block in materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `map!'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/spec_set.rb:85:in `materialize'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:114:in `specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:159:in `specs_for'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/definition.rb:148:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/environment.rb:18:in `requested_specs'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/runtime.rb:13:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler.rb:120:in `setup'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392@global/gems/bundler-1.3.5/lib/bundler/setup.rb:17:in `<top (required)>'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:60:in `rescue in require'
+  /home/juqiang/.rvm/rubies/ruby-1.9.3-p392/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:35:in `require'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/loader_shared_helpers.rb:212:in `run_load_path_setup_code'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:73:in `preload_app'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:127:in `<module:App>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:6:in `<module:PhusionPassenger>'
+  /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/helper-scripts/rack-preloader.rb:5:in `<main>'
+
+[ 2013-05-11 17:08:52.1109 31467/b7492700 agents/HelperAgent/Main.cpp:554 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.31463/generation-0/request.socket
+[ 2013-05-11 17:08:52.1307 31473/b6b0e980 agents/LoggingAgent/Main.cpp:272 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.31463/generation-0/logging.socket
+[ 2013-05-11 17:08:54.2241 31467/b725cb40 Pool2/Spawner.h:739 ]: [App 31499 stdout] 
+[ 2013-05-11 17:08:54.7104 31467/b725cb40 Pool2/SmartSpawner.h:300 ]: Preloader for /home/juqiang/GraduationDesign/v1/restv1 started on PID 31499, listening on unix:/tmp/passenger.1.0.31463/generation-0/backends/preloader.31499
+[ 2013-05-11 17:09:55.5858 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] [ 2013-05-11 17:09:55.5857 31529/0x8310404(Worker 1) utils.rb:71 ]: *** Exception TypeError in Rack application object (can't dup NilClass) (process 31529, thread 0x8310404(Worker 1)):
+[ 2013-05-11 17:09:55.5859 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/mongo-1.6.2/lib/mongo/collection.rb:208:in `dup'
+[ 2013-05-11 17:09:55.5859 31467/b66bdb40 Pool2/Implementation.cpp:1156 ]: [App 31529 stdout] 
+[ 2013-05-11 17:09:55.5859 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/mongo-1.6.2/lib/mongo/collection.rb:208:in `find'
+[ 2013-05-11 17:09:55.5859 31467/b66bdb40 Pool2/Implementation.cpp:1156 ]: [App 31529 stdout] 
+2013/05/11 17:09:55 [error] 31482#0: *6 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: _, request: "GET /countly/members HTTP/1.1", upstream: "passenger:/tmp/passenger.1.0.31463/generation-0/request.socket:", host: "127.0.0.1:2000"
+[ 2013-05-11 17:09:55.5859 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/GraduationDesign/v1/restv1/drowsy_dromedary.rb:211:in `block (3 levels) in <class:DrowsyDromedary>'
+[ 2013-05-11 17:09:55.5859 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/endpoint.rb:271:in `instance_eval'
+[ 2013-05-11 17:09:55.5859 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/endpoint.rb:271:in `run'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/endpoint.rb:113:in `block in call!'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:25:in `call'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:25:in `call!'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:19:in `call'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:25:in `call!'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:19:in `call'
+[ 2013-05-11 17:09:55.5860 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/error.rb:44:in `block in call!'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/error.rb:43:in `catch'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/error.rb:43:in `call!'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/middleware/base.rb:19:in `call'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-1.4.1/lib/rack/builder.rb:134:in `call'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/endpoint.rb:114:in `call!'
+[ 2013-05-11 17:09:55.5861 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/endpoint.rb:104:in `call'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/api.rb:399:in `call'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/api.rb:51:in `call!'
+[ 2013-05-11 17:09:55.5862 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/bundler/gems/grape-346fb940d126/lib/grape/api.rb:47:in `call'
+[ 2013-05-11 17:09:55.5863 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/rack-cors-0.2.6/lib/rack/cors.rb:51:in `call'
+[ 2013-05-11 17:09:55.5863 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/rack/thread_handler_extension.rb:77:in `process_request'
+[ 2013-05-11 17:09:55.5863 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/request_handler/thread_handler.rb:135:in `accept_and_process_next_request'
+[ 2013-05-11 17:09:55.5863 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/request_handler/thread_handler.rb:106:in `main_loop'
+[ 2013-05-11 17:09:55.5863 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/request_handler.rb:449:in `block (4 levels) in start_threads'
+[ 2013-05-11 17:09:55.5864 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/utils/robust_interruption.rb:108:in `disable_interruptions'
+[ 2013-05-11 17:09:55.5864 31467/b66feb40 Pool2/Implementation.cpp:1156 ]: [App 31499 stderr] 	from /home/juqiang/.rvm/gems/ruby-1.9.3-p392/gems/passenger-4.0.2/lib/phusion_passenger/request_handler.rb:444:in `block (3 levels) in start_threads'
