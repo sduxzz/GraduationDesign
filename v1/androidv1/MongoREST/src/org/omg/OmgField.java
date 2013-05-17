@@ -17,7 +17,11 @@ public class OmgField {
 		qString+=split()+ toJsonString(name)+":"+(o instanceof String?toJsonString(o):o.toString());
 		return this;
 	}
-	
+	/**
+	 * 大于o的值
+	 * @param o
+	 * @return
+	 */
 	public OmgField gt(Object o){
 		qString+=split()+ toJsonString(name)+":{\"$gt\":"+(o instanceof String?toJsonString(o):o.toString())+"}";
 		return this;

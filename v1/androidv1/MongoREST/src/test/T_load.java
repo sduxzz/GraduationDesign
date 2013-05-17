@@ -35,11 +35,12 @@ public class T_load {
 	public static void main(String[] args){
 		OmgSelector s=new OmgSelector();
 		s.addField(new OmgField("name").is("monkey"));
-		s.addField(new OmgField("age").lte(115));
+		s.addField(new OmgField("age").lte(15));
 		OmgOption opt=new OmgOption();
-		opt.limit(8).sort("age", false).sort("name",false).skip(1).field(new String[]{"name","age"});
-		System.out.println(opt.toString());	
+		opt.limit(8).sort("age", false).sort("name",false).skip(8).field(new String[]{"name","age"});
+		
 		ArrayList<ani> arr=OmgDAT.load(ani.class, s, opt);
+		
 		for(ani temp:arr){
 			System.out.println(temp.getName()+":"+temp.getAge());
 		}
