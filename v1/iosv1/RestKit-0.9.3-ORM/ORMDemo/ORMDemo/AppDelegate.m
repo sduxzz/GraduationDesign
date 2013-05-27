@@ -6,6 +6,15 @@
 //
 
 #import "AppDelegate.h"
+#import "SBJson.h"
+#import "ImageItemDataModel.h"
+#import "ImageItemsDataModel.h"
+#import "VideoItemDataModel.h"
+#import "VideoItemsDataModel.h"
+#import "ArticleContentDataModel.h"
+#import "ArticleContentDataMapping.h"
+#import "ImageDataMapping.h"
+#import "ImageArrayDataMapping.h"
 
 @implementation AppDelegate
 
@@ -18,15 +27,7 @@
 }
 
 
-#import "SBJson.h"
-#import "ImageItemDataModel.h"
-#import "ImageItemsDataModel.h"
-#import "VideoItemDataModel.h"
-#import "VideoItemsDataModel.h"
-#import "ArticleContentDataModel.h"
-#import "ArticleContentDataMapping.h"
-#import "ImageDataMapping.h"
-#import "ImageArrayDataMapping.h"
+
 
 
 - (void) test1 {
