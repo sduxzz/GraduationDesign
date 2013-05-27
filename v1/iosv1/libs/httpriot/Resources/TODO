@@ -1,0 +1,4 @@
+* [DONE]Update documentation to match new api
+* Use strings for specifying formats
+* Add plist encode/decode support
+* XML encode support - conversion from NSDictionary/NSArray to NSXMLDocument

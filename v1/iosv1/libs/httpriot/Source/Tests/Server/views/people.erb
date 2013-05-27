@@ -1,0 +1,39 @@
+<h2>People</h2>
+<table cellspacing="0" cellpadding="0" class="people">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><a href="/person/<%= person[:id] %>"><%= person[:name] %></a></td>
+        <td><%= person[:email] %></td>
+        <td><%= person[:telephone] %></td>
+        <td><%= person[:address] %></td>
+        <td class="action">
+          <form action="/person/<%= person[:id] %>" method="delete">
+            <input type="submit" title="delete" class="del" value="&mdash;" />
+          </form>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td colspan="5">
+        <form action="/person/form-data" method="post">
+          <input type="text" name="name" />
+          <input type="text" name="email" />
+          <input type="text" name="telephone" />
+          <input type="text" name="address" />
+          <input type="submit" value="create" class="btn" />
+          
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
